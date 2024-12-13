@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Edu App | Your Study Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Header (Hero Section) */
+    header {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(135deg, #4682b4, #87ceeb);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      clip-path: ellipse(150% 100% at 50% 0%);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      animation: fadeInDown 1.5s ease;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+    header a {
+      text-decoration: none;
+      color: white;
+      background: #003c8f;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+      animation: fadeInUp 2.5s ease;
+    }
+    header a:hover {
+      background: #002b6d;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2b4d66;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    nav a:hover {
+      background-color: #4682b4;
+      transform: scale(1.1);
+    }
+  /* Sign In Button */
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-in-button {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #4682b4,#87ceeb);
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .sign-in-button:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #4682b4,#87ceeb);
+  }
+    /* Parallax Section */
+    .parallax {
+      height: 400px;
+      background: url('images/background.jpg') center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 60px 20px;
+      background: white;
+      text-align: center;
+    }
+    .features h2 {
+      font-size: 2.5rem;
+      color: #4c6ef5;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .features .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    .feature {
+      background: linear-gradient(135deg, #ffffff, #f4f9ff);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature img {
+      width: 70px;
+      margin-bottom: 20px;
+    }
+    .feature h3 {
+      font-size: 1.5rem;
+      color: #5973dd;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background-color: #2b4d66;
+      color: white;
+      padding: 30px 0;
+    }
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+
+  <!-- Add this inside the header section -->
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="/" class="nav-button">Home</a>
+        <a href="/about" class="nav-button">About</a>
+        <a href="/feedback" class="nav-button">Feedback</a>
+  <a href="/signin" class="sign-in-button">Sign In</a>
+
+      </div>
+  
+      <!-- Search Form -->
+      <form action="/search" method="GET" class="search-bar">
+        <input 
+          type="text" 
+          name="q" 
+          placeholder="Search..." 
+          aria-label="Search" 
+          required>
+        <button type="submit">🔍</button>
+      </form>
+      
+    </div>
+    
+  </nav>
+  
+  <style>
+    /* Navigation Bar Styles */
+    nav {
+      background-color: #2b4d66;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+  
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    /* Navigation Links as Buttons */
+    .nav-links {
+      display: flex;
+      gap: 15px; /* Adjust spacing between buttons */
+    }
+  
+    .nav-button {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      background-color: #4682b4;
+      padding: 10px 20px;
+      border-radius: 30px; /* Rounded buttons */
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      display: inline-block;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-button:hover {
+      background-color: #2b4d66;
+      transform: scale(1.1);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    /* Search Bar Styles */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .search-bar input {
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      outline: none;
+      flex: 1;
+    }
+  
+    .search-bar button {
+      background: #4682b4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 0 30px 30px 0;
+      transition: background-color 0.3s ease;
+    }
+  
+    .search-bar button:hover {
+      background: #2b4d66;
+    }
+  </style>
+
+  
+  <header>
+    <h1>Welcome to Edu App</h1>
+    <a href="/about">Get Started</a>
+
+  </header>
+
+  <!-- Parallax Section -->
+  <div class="parallax"></div>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Explore Our Features</h2>
+    <div class="feature-grid">
+      <!-- Timetables -->
+      <div class="feature">
+        <img src="/images/timetable.jpg" alt="Timetable Icon">
+        <h3>Timetables</h3>
+        <p>Keep track of classes, exams, and schedules all in one place.</p>
+      </div>
+  
+      <!-- Task Management -->
+      <div class="feature">
+        <img src="/images/tasks.jpg" alt="Tasks Icon">
+        <h3>Task Management</h3>
+        <p>Plan and manage your assignments and projects effortlessly.</p>
+      </div>
+  
+      <!-- Exam Planner -->
+      <div class="feature">
+        <img src="/images/exam.jpg" alt="Exam Planner Icon">
+        <h3>Exam Planner</h3>
+        <p>Organize and prepare for exams with ease using our planner.</p>
+      </div>
+  
+      <!-- Sample Papers -->
+      <div class="feature">
+        <img src="/images/sample.jpg" alt="Sample Papers Icon">
+        <h3>Sample Papers</h3>
+        <p>Access a repository of sample papers and track your progress with analytics.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> Edu App. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
+

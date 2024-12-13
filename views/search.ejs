@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .results-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      color: #4682b4;
+      margin-bottom: 20px;
+    }
+    .result-item {
+      background: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    .result-item h2 {
+      color: #4c6ef5;
+      margin: 0 0 10px;
+    }
+    .result-item p {
+      color: #555;
+    }
+    .no-results {
+      color: #888;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="results-container">
+    <h1>Search Results for "<%= query %>"</h1>
+    <% if (results.length > 0) { %>
+      <% results.forEach(result => { %>
+        <div class="result-item">
+          <h2><%= result.title %></h2>
+          <p><%= result.category %></p>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p class="no-results">No results found for "<%= query %>".</p>
+    <% } %>
+  </div>
+</body>
+</html>

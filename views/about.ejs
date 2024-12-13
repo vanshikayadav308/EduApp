@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Edu App | Empowering Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+     /* Header (Hero Section) */
+     header {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(135deg, #4682b4, #87ceeb);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      clip-path: ellipse(150% 100% at 50% 0%);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      animation: fadeInDown 1.5s ease;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+    header a {
+      text-decoration: none;
+      color: white;
+      background: #003c8f;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+      animation: fadeInUp 2.5s ease;
+    }
+    header a:hover {
+      background: #002b6d;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2b4d66;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    nav a:hover {
+      background-color: #4682b4;
+      transform: scale(1.1);
+    }
+
+    /* Parallax Section */
+    .parallax {
+      height: 400px;
+      background: url('images/background.jpg') center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+    .about h2 {
+      font-size: 2.5rem;
+      color: #4c6ef5;
+      margin-bottom: 20px;
+    }
+    .about p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.8;
+    }
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+    /* Info Section */
+    .info-section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .info-section h2 {
+      font-size: 2.5rem;
+      color: #4c6ef5;
+      margin-bottom: 20px;
+    }
+    .info-section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature {
+      background: linear-gradient(135deg, #ffffff, #f4f9ff);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature img {
+      width: 70px;
+      margin-bottom: 20px;
+    }
+    .feature h3 {
+      font-size: 1.5rem;
+      color: #4c6ef5;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Team Section */
+    .team {
+      padding: 60px 20px;
+      text-align: center;
+      background: #eef3fa;
+    }
+    .team h2 {
+      font-size: 2.5rem;
+      color: #4c6ef5;
+      margin-bottom: 30px;
+    }
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .team-member {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .team-member h4 {
+      font-size: 1.2rem;
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .team-member p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .divider {
+  height: 200px;
+  background: url('images/background.jpg') center/cover no-repeat fixed;
+  position: relative;
+}
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+}
+.info-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f3f6fb; /* Subtle gray for contrast */
+}
+.about h2, .info-section h2 {
+  font-size: 2.5rem;
+  color: #4c6ef5;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+/* Sign In Button */
+.nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-in-button {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #4682b4,#87ceeb);
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .sign-in-button:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e6554e, #c63b36);
+  }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background-color: #2b4d66;
+      color: white;
+      padding: 20px 0;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+<nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="/" class="nav-button">Home</a>
+        <a href="/about" class="nav-button">About</a>
+        <a href="/feedback" class="nav-button">Feedback</a>
+        <a href="/signin" class="sign-in-button">Sign In</a>
+      </div>
+  
+      <!-- Search Form -->
+      <form action="/search" method="GET" class="search-bar">
+        <input 
+          type="text" 
+          name="q" 
+          placeholder="Search..." 
+          aria-label="Search" 
+          required>
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+  </nav>
+  
+  <style>
+    /* Navigation Bar Styles */
+    nav {
+      background-color: #2b4d66;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+  
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    /* Navigation Links as Buttons */
+    .nav-links {
+      display: flex;
+      gap: 15px; /* Adjust spacing between buttons */
+    }
+  
+    .nav-button {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      background-color: #4682b4;
+      padding: 10px 20px;
+      border-radius: 30px; /* Rounded buttons */
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      display: inline-block;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-button:hover {
+      background-color: #2b4d66;
+      transform: scale(1.1);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    /* Search Bar Styles */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .search-bar input {
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      outline: none;
+      flex: 1;
+    }
+  
+    .search-bar button {
+      background: #4682b4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 0 30px 30px 0;
+      transition: background-color 0.3s ease;
+    }
+  
+    .search-bar button:hover {
+      background: #2b4d66;
+    }
+  </style>
+  
+  <!-- Hero Section -->
+  <header>
+    <h1>About Edu App</h1>
+    <p>Empowering education with tools for students, teachers, and parents to collaborate, achieve, and thrive.</p>
+    <a href="/">Explore Features</a>
+  </header>
+
+
+  <!-- About Section -->
+<section class="about">
+    <h2>What We Do</h2>
+    <p>
+      Edu App revolutionizes learning by offering features like task management, exam planners, and real-time collaboration.
+      Our goal is to make education simple, effective, and accessible to everyone.
+    </p>
+  </section>
+  
+  <!-- Divider with Parallax Background -->
+  <div class="divider"></div>
+  
+  <!-- Info Section -->
+  <section class="info-section">
+    <h2>Our Mission</h2>
+    <p>
+      At Edu App, we believe that education is the foundation of progress. Our mission is to create an all-in-one platform
+      that simplifies academic life, enabling users to focus on achieving their goals.
+    </p>
+    <p>
+      From task management to timetable organization, our features are designed to support students, educators, and parents,
+      ensuring that learning is accessible, engaging, and productive.
+    </p>
+  </section>
+  
+  
+
+  <!-- Team Section -->
+  <section class="team">
+    <h2>Check out our articles to learn student productivity tips and tricks.</h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="images/Productivity.jpg" alt="Team Member">
+        <h4>Productivity Tips</h4>
+        <p>Learn productivity tips and tricks to help you stay ahead in your studies!</p>
+      </div>
+      <div class="team-member">
+        <img src="images/Time.jpg" alt="Team Member">
+        <h4>Time Management Tips</h4>
+        <p>Discover how to effectively manage your time and boost your productivity.</p>
+      </div>
+      <div class="team-member">
+        <img src="images/Exam-prep.jpg" alt="Team Member">
+        <h4>Exam Preparation Strategies</h4>
+        <p>Master exam prep with proven strategies that get results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> Edu App. All rights reserved.</p>
+  </footer>
+</body>
+</html>
